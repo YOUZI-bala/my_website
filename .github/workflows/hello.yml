@@ -1,0 +1,19 @@
+name: 打招呼工作流
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 输出问候
+        run: echo "你好!代码已经推送了 🎉"
+      
+      - name: 显示当前时间
+        run: date
+      
+      - name: 显示提交者
+        run: echo "推送者是:${{ github.actor }}"
